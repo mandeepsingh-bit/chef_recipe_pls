@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken"
 import User from "../models/User.js"
 import { asyncHandler } from "../utils/asyncHandler.js"
 import { AppError } from "../utils/AppError.js"
+import { validateCredentials } from "../utils/validateCredentials.js"
 
 const router = express.Router()
 
@@ -13,17 +14,7 @@ function generateToken(userId) {
 // Shared validation for both register and login — throwing here means
 // asyncHandler catches it and forwards straight to errorHandler.js,
 // so neither route needs its own try/catch for these checks.
-function validateCredentials(username, password) {
-    if (!username || !password) {
-        throw new AppError("Username and password are required", 400)
-    }
-    if (username.trim().length < 3) {
-        throw new AppError("Username must be at least 3 characters", 400)
-    }
-    if (password.length < 6) {
-        throw new AppError("Password must be at least 6 characters", 400)
-    }
-}
+ 
 
 router.post("/register", asyncHandler(async (req, res) => {
     const { username, password } = req.body
