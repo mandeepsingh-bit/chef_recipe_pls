@@ -7,7 +7,7 @@ export default function Header({ username, onLogin, onLogout, onShowHistory }) {
             <div className="header-spacer" />
             <div className="header-center">
                 <img src={chefClaudeLogo} alt="Chef Claude logo" />
-                <h1>PANTRY CHEF</h1>
+                <h1>CHEF RECIPE PLS</h1>
             </div>
             <div className="header-account">
                 <AccountMenu
