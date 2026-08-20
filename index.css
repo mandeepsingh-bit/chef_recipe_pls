@@ -293,3 +293,19 @@ ul.ingredients-list > li {
 .suggested-recipe-container ul li, .suggested-recipe-container ol li {
     margin-bottom: 8px;
 }
+
+
+@media(max-width: 480px){
+    header{
+        padding: 0 12px;
+    }
+    .header-spacer,.header-account{
+        width:60px;
+    }
+    .header-center h1{
+        font-size: 16px;
+    }
+    .header-center img{
+        width:36px;
+    }
+}
