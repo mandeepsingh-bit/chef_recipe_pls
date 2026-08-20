@@ -38,7 +38,7 @@ export async function getRecipeFromChefClaude(ingredientsArr) {
         })
         const content = completion.choices[0]?.message?.content
         if(!content){
-            throw new Error("Chef Claude couldn't generate a recipe for those ingredients. Try adding a few more.")
+            throw new Error("CheF couldn't generate a recipe for those ingredients. Try adding a few more.")
         }
 
         return  content
